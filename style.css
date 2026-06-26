@@ -1,0 +1,315 @@
+/* ===========================
+   WINDOWS 98 MINESWEEPER
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    user-select:none;
+    font-family:Tahoma,Verdana,sans-serif;
+}
+
+body{
+    background:#008080;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* ===========================
+   JANELA
+=========================== */
+
+.window{
+    background:#c0c0c0;
+    padding:3px;
+
+    border-top:2px solid #fff;
+    border-left:2px solid #fff;
+    border-right:2px solid #404040;
+    border-bottom:2px solid #404040;
+
+    box-shadow:2px 2px 0 #808080;
+}
+
+.titlebar{
+    background:linear-gradient(to right,#000080,#1084d0);
+    color:white;
+    padding:4px 8px;
+    font-weight:bold;
+    font-size:13px;
+    margin-bottom:3px;
+}
+
+.game{
+    padding:8px;
+}
+
+/* ===========================
+   PAINEL SUPERIOR
+=========================== */
+
+.top-panel{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#c0c0c0;
+
+    padding:6px;
+
+    margin-bottom:8px;
+
+    border-top:2px solid #808080;
+    border-left:2px solid #808080;
+
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+
+}
+
+.display{
+
+    width:58px;
+    height:34px;
+
+    background:black;
+
+    color:red;
+
+    font-size:28px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:monospace;
+
+    border-top:2px solid #404040;
+    border-left:2px solid #404040;
+
+    border-right:2px solid #fff;
+    border-bottom:2px solid #fff;
+
+}
+
+/* ===========================
+   BOTÃO DA CARINHA
+=========================== */
+
+#face{
+
+    width:38px;
+    height:38px;
+
+    font-size:22px;
+
+    background:#c0c0c0;
+
+    cursor:pointer;
+
+    border-top:2px solid white;
+    border-left:2px solid white;
+
+    border-right:2px solid #404040;
+    border-bottom:2px solid #404040;
+
+}
+
+#face:active{
+
+    border-top:2px solid #404040;
+    border-left:2px solid #404040;
+
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+
+}
+
+/* ===========================
+   TABULEIRO
+=========================== */
+
+#board{
+
+    display:grid;
+
+    border-top:3px solid #808080;
+    border-left:3px solid #808080;
+
+    border-right:3px solid white;
+    border-bottom:3px solid white;
+
+}
+
+/* ===========================
+   CASAS
+=========================== */
+
+.cell{
+
+    width:24px;
+    height:24px;
+
+    background:#c0c0c0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    border-top:2px solid white;
+    border-left:2px solid white;
+
+    border-right:2px solid #808080;
+    border-bottom:2px solid #808080;
+
+}
+
+/* Casa aberta */
+
+.open{
+
+    background:#c0c0c0;
+
+    border:1px solid #808080;
+
+}
+
+/* Mina */
+
+.mine{
+
+    background:#ff4040;
+
+}
+
+/* Bandeira */
+
+.flag{
+
+    color:red;
+
+}
+
+/* Explodida */
+
+.exploded{
+
+    background:red;
+
+}
+
+/* ===========================
+   CORES DOS NÚMEROS
+=========================== */
+
+.n1{
+
+    color:#0000ff;
+
+}
+
+.n2{
+
+    color:#008000;
+
+}
+
+.n3{
+
+    color:#ff0000;
+
+}
+
+.n4{
+
+    color:#000080;
+
+}
+
+.n5{
+
+    color:#800000;
+
+}
+
+.n6{
+
+    color:#008080;
+
+}
+
+.n7{
+
+    color:#000000;
+
+}
+
+.n8{
+
+    color:#808080;
+
+}
+
+/* ===========================
+   EFEITOS
+=========================== */
+
+.cell:hover:not(.open){
+
+    filter:brightness(105%);
+
+}
+
+.hidden{
+
+    visibility:hidden;
+
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+
+@media(max-width:700px){
+
+.cell{
+
+    width:20px;
+    height:20px;
+
+    font-size:15px;
+
+}
+
+.display{
+
+    width:52px;
+    font-size:24px;
+
+}
+
+#face{
+
+    width:34px;
+    height:34px;
+
+    font-size:20px;
+
+}
+
+}
