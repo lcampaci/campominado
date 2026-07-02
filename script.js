@@ -538,4 +538,11 @@ const game = new Game(DIFFICULTIES.beginner);
 
 // Retorna todas as células vizinhas
 
-
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker
+            .register("./service-worker.js")
+            .then(() => console.log("Service Worker registrado"))
+            .catch(err => console.error(err));
+    });
+}
